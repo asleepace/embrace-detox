@@ -28,5 +28,6 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "test-runner": "jest"
 }

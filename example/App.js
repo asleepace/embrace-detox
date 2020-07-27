@@ -25,7 +25,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.container} testID={'WelcomeScreen'}>
         <View>
           <Text style={styles.header}>{'Embrace + Detox Example'}</Text>
           <Text style={styles.body}>
