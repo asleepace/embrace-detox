@@ -25,16 +25,14 @@ react-native run-android
 
 # Installing Detox
 
-The next step is to install the Detox testing framework, you can find more detailed instructions on this [by clicking here](https://github.com/wix/Detox/blob/master/docs/Introduction.GettingStarted.md).
-
-You will need to install *node* (8.3.0+) and the *detox-cli* tools, which can be done by running the following script:
+The next step is to install the Detox testing framework, you can find more detailed instructions on this [here](https://github.com/wix/Detox/blob/master/docs/Introduction.GettingStarted.md). You will need to install *node* (8.3.0+) and the *detox-cli* tools, which can be done by running the following script:
 
 ```bash
 brew update && brew install node
 npm install -g detox-cli
 ```
 
-Then add the *detox* testing framework to the project as well:
+Then add the *detox* testing framework to the *example* project as well:
 
 ```bash
 yarn add detox -D
