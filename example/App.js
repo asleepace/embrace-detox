@@ -8,7 +8,12 @@
 
 import React from 'react';
 import {StyleSheet, View, Text, Button} from 'react-native';
-import {initialize, endAppStartup} from 'react-native-embrace';
+import {
+  initialize,
+  endAppStartup,
+  logMessage,
+  WARNING,
+} from 'react-native-embrace';
 
 export default class App extends React.Component {
 
@@ -20,6 +25,7 @@ export default class App extends React.Component {
 
   componentDidMount() {
     endAppStartup();
+    logMessage('[Example] example app test log');
   }
 
   render() {
