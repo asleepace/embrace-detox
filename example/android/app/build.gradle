@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply plugin: 'embrace-swazzler'
 
 import com.android.build.OutputFile
 
@@ -79,6 +80,8 @@ import com.android.build.OutputFile
 
 project.ext.react = [
     enableHermes: false,  // clean and rebuild if changing
+    entryFile: "index.js",
+    extraPackagerArgs: ["--sourcemap-output", "$buildDir/generated/sourcemaps/android-embrace.bundle.map"]
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -126,6 +129,16 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    repositories {
+        jcenter()
+        google()
+    }
+    embrace {
+        // Replace with your APP_ID, which is a 5-character value, e.g. "aBc45" and the token
+        appId = '<EMBRACE_APP_ID>'
+        apiToken = '<API_TOKEN>'
     }
 
     defaultConfig {
@@ -186,6 +199,8 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+
+    implementation project(':react-native-embrace')
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'

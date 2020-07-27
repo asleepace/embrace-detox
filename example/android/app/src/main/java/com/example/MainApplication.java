@@ -4,12 +4,16 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import io.embrace.embracewrapper.EmbraceManagerPackage;
+import io.embrace.embracewrapper.EmbraceManagerPackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+
+import io.embrace.android.embracesdk.Embrace; // Add the import line
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -43,6 +47,7 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
+    Embrace.getInstance().start(this, false, Embrace.AppFramework.REACT_NATIVE);
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }

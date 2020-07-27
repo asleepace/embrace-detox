@@ -8,17 +8,30 @@
 
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
+import {initialize, endAppStartup} from 'react-native-embrace';
 
-const App = () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.header}>{'Embrace + Detox Example'}</Text>
-      <Text style={styles.body}>
-        {'This is an example test application using embrace and detox.'}
-      </Text>
-    </View>
-  );
-};
+export default class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    initialize();
+  }
+
+  componentDidMount() {
+    endAppStartup();
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.header}>{'Embrace + Detox Example'}</Text>
+        <Text style={styles.body}>
+          {'This is an example test application using embrace and detox.'}
+        </Text>
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -38,5 +51,3 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
-
-export default App;
