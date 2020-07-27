@@ -8,12 +8,7 @@
 
 import React from 'react';
 import {StyleSheet, View, Text, Button} from 'react-native';
-import {
-  initialize,
-  endAppStartup,
-  logMessage,
-  WARNING,
-} from 'react-native-embrace';
+import {initialize, endAppStartup, logMessage} from 'react-native-embrace';
 
 export default class App extends React.Component {
 
@@ -59,7 +54,7 @@ const styles = StyleSheet.create({
   },
   body: {
     textAlign: 'center',
+    paddingBottom: 64,
     fontSize: 16,
-    paddingBottom: 32,
   },
 });
