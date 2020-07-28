@@ -7,7 +7,7 @@ To download this project from Github, please run the following command:
 git clone git@github.com:Asleepace/embrace-detox.git
 ```
 
-You should then see a folder name **embrace-detox** which contains the sample project, to get started run the following commands:
+You should then see a folder named **embrace-detox**, which contains the sample project, to get started run the following commands:
 
  ```bash
  cd embrace-detox
@@ -15,13 +15,13 @@ You should then see a folder name **embrace-detox** which contains the sample pr
 yarn
 ```
 
-Once yarn is finished installing the modules, try running the project in debug mode to make sure it builds. It should build and you will see a welcome screen with some sample text and a button. You can build by running the following command:
+Once yarn is finished installing, try running the project in debug mode to make sure everything was installed properly, you can build by running the following command:
 
 ```bash
 react-native run-android
 ```
 
-The project should build correctly without any issues, and you will see a simple welcome screen.
+The project should build correctly, and you will see a simple welcome screen with some text and a button.
 
 # Installing Detox
 
@@ -32,13 +32,13 @@ brew update && brew install node
 npm install -g detox-cli
 ```
 
-Then add the **detox** package to the **example** project:
+Then add the **detox** package to the **example** project by running this command in the `./embrace-detox/example` folder:
 
 ```bash
 yarn add detox -D
 ```
 
-Next we install Jest -- a test runner which handles the actual Javascript code execution, you can read more about that [here](https://github.com/wix/Detox/blob/master/docs/Guide.Jest.md). Run the following script:
+Next install Jest, the test runner which handles the actual Javascript code execution, you can read more about that [here](https://github.com/wix/Detox/blob/master/docs/Guide.Jest.md). Run the following script:
 
 ```bash
 yarn add jest jest-circus -D
@@ -48,7 +48,7 @@ And now we are almost ready to run our test suite!
 
 # Running the tests
 
-The goal of Detox and Jest is to run automated tests on our application. This can help us identify issues before they reach production, and thus are vitally important for our organization. Please not the following lines in *.detoxrc.json*.
+The goal of Detox and Jest is to run automated tests on our application. This can help us identify issues before they reach production, and thus are vitally important for our organization. Please not the following lines in the **.detoxrc.json**.
 
 ```json
 {
@@ -81,7 +81,7 @@ In the configurations portion of the snippet above you see our two test schemas,
 
 ### Set target virtual machine
 
-Next please make not of the device which will be running these tests, you will need to create these in Android Studio and then change the `advName` to match one of the devices you created.
+Next please make note of the test device which will be running these tests, you will need to create these in Android Studio and then change the `advName` to match one of the devices you created.
 
 ### Creating virtual machines
 
@@ -95,13 +95,13 @@ Once all of the above has been completed we can now try running our test suite, 
 detox build -c android.emu.debug
 ```
 
-This will build our debug release of the application, which we can then run our test suite on by running the folling command:
+This will build our debug testing application, which we can then run our test suite on by running the folling command:
 
 ```bash
 detox run -c android.emu.debug
 ```
 
-What we have noticed is that building the debug version of the application fails, and the issue appears to be related to Embrace (more details below).
+What we have noticed is that when building the debug version of the application fails, and the issue appears to be related to Embrace (more details below).
 
 # Errors
 
