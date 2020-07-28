@@ -1,7 +1,5 @@
-# embrace-detox
-This is a minimum verifiable example which illustrates the build errors with Embrace, Detox & Jest. This project was created with the latest version of React Native using `react-native init`. Implemented via the current Embrace react-native guide (android only) as well as Detox and Jest. Hopefully this can help debug the issue!
-
 # Getting Started
+This is a minimum verifiable example which illustrates the build errors with Embrace, Detox & Jest. This project was created with the latest version of React Native using `react-native init`. Implemented via the current Embrace react-native guide (android only) as well as Detox and Jest. Hopefully this can help debug the issue!
 
 To download this project from Github, please run the following command:
 
