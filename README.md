@@ -1,5 +1,5 @@
 # embrace-detox
-A sample example of the issue(s) we are facing with Embrace, Detox & Jest for react native. This is a minimum verifiable example which illustrates the build errors between these two frameworks. This project was created with the latest version of React Native using `react-native init`. We then implement the Embrace framework (android only) and were able to build the debug version of the application. After installing the Detox & Jest testing frameworks, we then ran into the same issues which are occuring on our host application. Hopefully this can help debug the issue!
+A sample example of the issue(s) we are facing with Embrace, Detox & Jest for react native. This is a minimum verifiable example which illustrates the build errors between these two frameworks. This project was created with the latest version of React Native using `react-native init`. We then implemented the Embrace framework (android only) and were able to build the debug version of the application. After installing the Detox & Jest testing frameworks, we then ran into the same issues which are occuring on our host application. Hopefully this can help debug the issue!
 
 # Getting Started
 
