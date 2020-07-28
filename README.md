@@ -103,7 +103,7 @@ detox run -c android.emu.debug
 
 What we have noticed is that when building the debug version of the application fails, and the issue appears to be related to Embrace (more details below).
 
-# Errors
+# Sample error output
 
 Below is a snippet of the specific error which occurs when building the test suite for debug mode:
 
