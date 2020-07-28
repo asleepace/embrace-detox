@@ -76,12 +76,15 @@ The goal of Detox and Jest is to run automated tests on our application. This ca
 ```
 
 ### Set apk binary path
+
 In the configurations portion of the snippet above you see our two test schemas, one for debug and one for release. Please make sure that the `binaryPath` matches the actual binary path the of the generated apk. 
 
 ### Set target virtual machine
+
 Next please make not of the device which will be running these tests, you will need to create these in Android Studio and then change the `advName` to match one of the devices you created.
 
 ### Creating virtual machines
+
 You can learn more about creating virtual devices [here](https://developer.android.com/studio/run/managing-avds).
 
 # Running the tests
@@ -98,4 +101,40 @@ This will build our debug release of the application, which we can then run our 
 detox run -c android.emu.debug
 ```
 
-What we have noticed is that building the debug version of the application fails, and the issue appears to be related to Embrace (more details below). 
+What we have noticed is that building the debug version of the application fails, and the issue appears to be related to Embrace (more details below).
+
+# Errors
+
+Below are snippets of errors that occure when trying to build the test suite for debug mode:
+
+```bash
+> Transform artifact android-retrostreams-1.6.3.jar (net.sourceforge.streamsupport:android-retrostreams:1.6.3) with DexingNoClasspathTransform
+AGPBI: {"kind":"error","text":"Default interface methods are only supported starting with Android N (--min-api 24): void java9.util.Spliterator.forEachRemaining(java9.util.function.Consumer)","sources":[{}],"tool":"D8"}
+
+> Task :react-native-embrace:mergeExtDexDebugAndroidTest FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':react-native-embrace:mergeExtDexDebugAndroidTest'.
+> Could not resolve all files for configuration ':react-native-embrace:debugAndroidTestRuntimeClasspath'.
+   > Failed to transform embrace-android-sdk-4.2.2.aar (embrace-io:embrace-android-sdk:4.2.2) to match attributes {artifactType=android-dex, dexing-enable-desugaring=false, dexing-is-debuggable=true, dexing-min-sdk=16, org.gradle.category=library, org.gradle.libraryelements=jar, org.gradle.status=release, org.gradle.usage=java-runtime}.
+      > Execution failed for DexingNoClasspathTransform: /Users/phoenix/.gradle/caches/transforms-2/files-2.1/cbc2aa55cf3dd036108a8a4b18d809f1/jetified-embrace-android-sdk-4.2.2-runtime.jar.
+         > Error while dexing.
+   > Failed to transform android-retrostreams-1.6.3.jar (net.sourceforge.streamsupport:android-retrostreams:1.6.3) to match attributes {artifactType=android-dex, dexing-enable-desugaring=false, dexing-is-debuggable=true, dexing-min-sdk=16, org.gradle.category=library, org.gradle.libraryelements=jar, org.gradle.status=release, org.gradle.usage=java-runtime}.
+      > Execution failed for DexingNoClasspathTransform: /Users/phoenix/.gradle/caches/modules-2/files-2.1/net.sourceforge.streamsupport/android-retrostreams/1.6.3/c42be8718a61aa62f5ea1f44fff167f1c7ef5ce6/android-retrostreams-1.6.3.jar.
+         > Error while dexing.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.2/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD FAILED in 17s
+96 actionable tasks: 93 executed, 3 up-to-date
+detox[47035] ERROR: [cli.js] Error: Command failed: cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..
+```
