@@ -105,7 +105,7 @@ What we have noticed is that building the debug version of the application fails
 
 # Errors
 
-Below are snippets of errors that occure when trying to build the test suite for debug mode:
+Below is a snippet of the specific error which occurs when building the test suite for debug mode:
 
 ```bash
 > Transform artifact android-retrostreams-1.6.3.jar (net.sourceforge.streamsupport:android-retrostreams:1.6.3) with DexingNoClasspathTransform
@@ -138,3 +138,24 @@ BUILD FAILED in 17s
 96 actionable tasks: 93 executed, 3 up-to-date
 detox[47035] ERROR: [cli.js] Error: Command failed: cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..
 ```
+
+# Troubleshooting
+
+If you ar eunable to get this particular project running, it is quite easy to recreate this project from scratch. Just use the following guides for setting up.
+
+### React native setup
+
+[https://reactnative.dev/docs/0.61/getting-started](https://reactnative.dev/docs/0.61/getting-started)
+
+### Detox setup
+
+[https://github.com/wix/Detox/blob/master/docs/Introduction.GettingStarted.md](https://github.com/wix/Detox/blob/master/docs/Introduction.GettingStarted.md)
+
+### Jest setup with Detox
+
+[https://github.com/wix/Detox/blob/master/docs/Guide.Jest.md](https://github.com/wix/Detox/blob/master/docs/Guide.Jest.md)
+
+### Running tests
+
+[https://github.com/wix/Detox/blob/master/docs/Introduction.WritingFirstTest.md](https://github.com/wix/Detox/blob/master/docs/Introduction.WritingFirstTest.md)
+
