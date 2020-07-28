@@ -141,7 +141,7 @@ detox[47035] ERROR: [cli.js] Error: Command failed: cd android && ./gradlew asse
 
 # Troubleshooting
 
-If you ar eunable to get this particular project running, it is quite easy to recreate this project from scratch. Just use the following guides for setting up.
+If you are unable to get this particular project running, it is quite easy to recreate this project from scratch, just use the following guides to create a new react-native project with Embrace, Detox and Jest:
 
 ### React native setup
 
